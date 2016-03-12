@@ -4,16 +4,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
     tools:context=".MainActivity">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:elevation="8dp"
         android:theme="@style/AppTheme.AppBarOverlay">
+
+        <!-- 这个View是为了填充statusBar而添加的-->
+        <View
+            app:layout_scrollFlags="scroll|enterAlways"
+            android:id="@+id/view_status_bar_fitter"
+            android:layout_width="match_parent"
+            android:layout_height="0dp" />
 
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar"
+            app:layout_scrollFlags="scroll|enterAlways"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="?attr/colorPrimary"
